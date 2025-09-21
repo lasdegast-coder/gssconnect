@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GSS Connect</title>
+  <meta name="description" content="GSS Connect — Programmes, projects, and organisations next to your studies.">
+  <style>
+    :root{
+      --green-900:#0b3d2e;
+      --green-700:#166a4b;
+      --green-600:#1b7a56;
+      --green-300:#a7d4bd;
+      --green-100:#e7f3ec;
+      --page:#f7fbf9;
+
+      --text:#0f172a;
+      --muted:#475569;
+      --radius:14px;
+      --maxw:1100px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    html,body{height:100%;margin:0;background:var(--page);color:var(--text);font-size:17px;line-height:1.6;scroll-behavior:smooth}
+
+    .wrap{width:100%;margin:0;padding:0}
+    .inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;box-sizing:border-box}
+
+    header{
+      background: linear-gradient(135deg, #f2faf6, var(--green-100));
+      padding:56px 0 60px;
+      position:relative;
+      overflow:hidden;
+      text-align:center;
+    }
+    .logo-main img{max-height:160px;width:auto;margin:0 auto;display:block}
+    header p.lead{color:#103228;margin:20px auto 0;font-size:1.05rem;max-width:840px}
+
+    .cta-split{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:16px;max-width:760px;margin:24px auto 0}
+    .cta-left{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+    .cta-right{display:flex;justify-content:flex-start;align-items:flex-start}
+    .btn{appearance:none;border:0;border-radius:999px;padding:12px 18px;font-weight:600;text-decoration:none;display:inline-block;width:auto}
+    .btn-primary{background:var(--green-700);color:#fff;box-shadow:0 2px 6px rgba(22,106,75,.15)}
+    .btn-primary:hover{background:var(--green-600)}
+    .btn-ghost{background:#ffffff;color:var(--green-700);border:2px solid var(--green-100);box-shadow:0 2px 6px rgba(0,0,0,.04)}
+
+    main{padding:36px 0}
+    .section{padding:32px 0}
+
+    .section-title{text-align:center;margin-bottom:10px}
+    .section-title h2{font-size:1.8rem;margin:0;color:var(--green-700);letter-spacing:.2px;position:relative;display:inline-block;padding-bottom:8px}
+    .section-title h2::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:3px;background:var(--green-700);opacity:.35;border-radius:2px}
+    .section-subtitle{text-align:center;color:var(--muted);font-size:1rem;margin-bottom:18px;max-width:760px;margin-left:auto;margin-right:auto}
+
+    #why-hero{position:relative;background:#0f1f18 url('why-bg.jpg') center/cover no-repeat;}
+    #why-hero .overlay{background:linear-gradient(0deg, rgba(11,61,46,0.55), rgba(11,61,46,0.35));}
+    #why-hero .overlay{width:100%;height:100%;}
+    #why-hero .inner{position:relative;z-index:2}
+    #why-hero .section-title h2{color:#fff}
+    #why-hero .pill-icon strong{color:#e9f7f0}
+
+    .pill-icon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:16px}
+    .pill-icon{display:flex;gap:10px;align-items:flex-start;padding:16px;border-radius:var(--radius);background:rgba(255,255,255,.08);backdrop-filter: blur(2px);border:1px solid rgba(255,255,255,.15)}
+    .pill-icon .dot{width:12px;height:12px;border-radius:50%;background:#c5f1de;margin-top:6px;box-shadow:0 0 0 3px rgba(197,241,222,.25)}
+
+    .timeline{margin:0;padding:0;font-size:1rem;list-style:none;max-width:800px;margin-left:auto;margin-right:auto}
+    .timeline li{margin-bottom:16px;position:relative;padding-left:34px}
+    .timeline li::before{content:"";position:absolute;left:0;top:.35em;width:10px;height:10px;border:2px solid var(--green-700);border-radius:50%;background:transparent}
+    .timeline strong{color:var(--green-700)}
+    .muted{color:var(--muted)}
+
+  .logos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: center;
+  justify-items: center;
+  margin: 24px 0;
+}
+
+@media (max-width: 900px) {
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .logos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.logos-grid img {
+  width: 100%;
+  max-width: 140px;
+  max-height: 72px;
+  object-fit: contain;
+  opacity: .95;
+  filter: grayscale(10%);
+}
+
+
+    .events{max-width:800px;margin:0 auto}
+    .events ul{margin-top:14px;padding-left:20px;list-style:disc}
+    .events li{margin:6px 0}
+
+    #about-section{background:var(--green-100);padding:40px 0;margin-top:28px}
+    .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:20px}
+    .about-card{background:#fff;border-radius:var(--radius);padding:16px;text-align:center;border:1px solid rgba(0,0,0,0.05);box-shadow:0 8px 24px rgba(0,0,0,.04)}
+    .about-card img{width:100%;max-width:160px;height:auto;border-radius:50%;margin-bottom:12px}
+    .about-card h3{margin:0;color:var(--green-700)}
+    .about-card p{font-size:.9rem;color:var(--muted)}
+    .about-card a.linkedin{display:inline-flex;align-items:center;gap:6px;margin-top:8px;color:var(--green-700);font-weight:600;text-decoration:none;font-size:0.9rem}
+    .about-card a.linkedin:hover{text-decoration:underline}
+    .about-card a.linkedin svg{width:16px;height:16px;fill:var(--green-700)}
+
+    #contact-section{background:linear-gradient(135deg, var(--green-100), #f1faf6);padding:40px 0;margin-top:28px}
+    #contact .section-title h2{color:var(--green-900)}
+    #contact p{margin:10px 0 0;text-align:center}
+    a.phone{color:var(--green-700);font-weight:700;text-decoration:none;font-size:1.2rem;letter-spacing:.2px}
+
+    footer{text-align:center;color:var(--muted);font-size:.9rem;padding:18px 0}
+
+    @media (max-width:700px){
+      .logo-main img{max-height:120px}
+      .cta-split{grid-template-columns:1fr;gap:10px}
+      .cta-left{align-items:center}
+      .cta-right{justify-content:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="inner">
+        <div class="logo-main">
+          <img src="logo.png" alt="GSS Connect logo">
+        </div>
+        <p class="lead">
+          We provide advice on things you can do next to your studies. Programmes, projects, and organisations to join.
+          Our goal is to support fellow GSS students with their careers in sustainability. Build CV, experience and network. We offer you our database, no costs. By GSS, for GSS.
+        </p>
+
+        <div class="cta-split">
+          <div class="cta-left">
+            <a class="btn btn-primary" href="#programmes">Programmes Next To Studies</a>
+            <a class="btn btn-primary" href="#contact" style="margin-right:1px">Text Us</a>
+          </div>
+          <div class="cta-right">
+            <a class="btn btn-ghost" href="#events">List Of Events</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="why-hero">
+        <div class="overlay">
+          <div class="inner">
+            <section id="why" class="section">
+              <div class="section-title"><h2>Why Do More Next To Your Studies?</h2></div>
+              <div class="pill-icon-grid">
+                <div class="pill-icon"><span class="dot"></span><strong>CV Building</strong></div>
+                <div class="pill-icon"><span class="dot"></span><strong>Experience</strong></div>
+                <div class="pill-icon"><span class="dot"></span><strong>Network</strong></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <div class="inner">
+        <section id="programmes" class="section">
+          <div class="section-title"><h2>Programmes Next To Studies</h2></div>
+          <ol class="timeline muted">
+            <li><strong>Database:</strong> We have an extensive database of options, per topic and per category.</li>
+            <li><strong>Personal advice:</strong> We plan a coffee chat. We go through the database together. We explain you all about the different options.</li>
+            <li><strong>Guidance:</strong> We help you apply and get accepted to the programmes you want.</li>
+            <li><strong>Topics:</strong> Topics include policy, energy, environmental communication, food systems, biodiversity, international relations.</li>
+            <li><strong>Categories:</strong> External programmes, trainings, youth organisations, volunteering, university programmes, hackathons, internships.</li>
+          </ol>
+        </section>
+      </div>
+
+           <section id="examples-section">
+  <div class="inner">
+    <div class="section-title"><h2>Examples Of Programmes And Organisations</h2></div>
+    <div class="logos-grid">
+      <img src="WWF-logo.png" alt="WWF logo">
+      <img src="SDGchallenge-logo.png" alt="SDG Challenge logo">
+      <img src="NAHSS-logo.png" alt="NAHSS logo">
+      <img src="unitednetherlands-logo.png" alt="United Netherlands logo">
+
+      <img src="moretreesnow-logo.png" alt="More Trees Now logo">
+      <img src="eu-logo.png" alt="European Union logo">
+      <img src="westwing-logo.png" alt="Westwing logo">
+      <img src="DKC-logo.png" alt="DKC logo">
+
+      <img src="defensitycollege-logo.png" alt="Defensity College logo">
+      <img src="JKB-logo.png" alt="JKB logo">
+      <img src="DDSC-logo.png" alt="DDSC logo">
+      <img src="BISCE-logo.png" alt="BISCE logo">
+
+      <img src="WYCJ-logo.png" alt="WYCJ logo">
+      <img src="davinci-logo.png" alt="Da Vinci Project logo">
+    </div>
+  </div>
+</section>
+
+      <div class="inner">
+        <section id="events" class="section events">
+          <div class="section-title"><h2>List Of Events</h2></div>
+          <div class="section-subtitle">
+            We believe going to networking events is the way to go. Conferences, presentations, expositions, fairs etc. Talk to people, get inspired and learn real-life stuff. 
+            We created a WhatsApp group where we send the most interesting events.
+          </div>
+          <ul>
+            <li>Impact Fair</li>
+            <li>National Climate Expo</li>
+            <li>Sustainability Career Event</li>
+            <li>Social Impact Factory</li>
+            <li>Utrecht Union</li>
+            <li>Upstream</li>
+            <li>And many more</li>
+          </ul>
+        </section>
+      </div>
+
+      <section id="about-section">
+        <div class="inner">
+          <div class="section-title"><h2>About Us</h2></div>
+          <div class="about-grid">
+            <div class="about-card">
+              <img src="valentijngss.png" alt="Valentijn (GSS)">
+              <h3>Valentijn</h3>
+              <p>I am really into sustainable energy. I am now doing my master Energy Science. I started Defensity College, where I work in the sustainability department. I enjoy going to events about niche subjects like marketing-psychology or innovation in the military. Then I connect it with sustainability. I also like jazz dance and singing a capella in inappropriate situations.</p>
+              <a class="linkedin" href="https://www.linkedin.com/in/valentijn-roorda-934735239/" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.1h.05c.53-1 1.82-2.1 3.75-2.1 4 0 4.75 2.6 4.75 6V24h-4v-7.6c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4v7.7h-4V8.5z"/></svg>
+                LinkedIn
+              </a>
+            </div>
+            <div class="about-card">
+              <img src="joukegss.jpg" alt="Jouke (GSS)">
+              <h3>Jouke</h3>
+              <p>My ideal work would be combining NGO-type work with business models. I love coming up with new business ideas and then executing them. I started a project called MoreTreesNow during which we saved 180000 trees. I am also working on a startup. We sell compost-heating systems to farmers to turn their waste into compost and heat. Next to that, I am great at 'hakken', which some might call the Dutch national dance.</p>
+              <a class="linkedin" href="https://www.linkedin.com/in/jouke-nabuurs-b65a62241/" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.1h.05c.53-1 1.82-2.1 3.75-2.1 4 0 4.75 2.6 4.75 6V24h-4v-7.6c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4v7.7h-4V8.5z"/></svg>
+                LinkedIn
+              </a>
+            </div>
+            <div class="about-card">
+              <img src="lassegss.png" alt="Lasse (GSS)">
+              <h3>Lasse</h3>
+              <p>I spend most of my time trying to build compost-heating systems as my startup. I love agriculture. I also really like the social side of sustainability. I started a foundation where we help small African businesses find cheaper funding in Western countries. I went on an exchange semester to Melbourne where I studied development economics and spent half my time biking around in nature.</p>
+              <a class="linkedin" href="https://www.linkedin.com/in/lasse-lamet-b67412213/" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.1h.05c.53-1 1.82-2.1 3.75-2.1 4 0 4.75 2.6 4.75 6V24h-4v-7.6c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4v7.7h-4V8.5z"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact-section">
+        <div class="inner">
+          <div id="contact" class="section">
+            <div class="section-title"><h2>Text Us</h2></div>
+            <div class="section-subtitle">Send us a text with the following info: Topics of interest, previous experience, 3 proposals for coffee time.</div>
+            <p>
+              <a class="phone" href="tel:+31631399007">+31 6 3139 9007</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="inner">
+        <p>© <span id="year"></span> GSS Connect | 
+          <a href="https://www.linkedin.com/company/gss-connect" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
